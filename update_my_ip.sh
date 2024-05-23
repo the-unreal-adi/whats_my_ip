@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Set the working directory explicitly
+working_directory="/home/pi/whats_my_ip"
+
+# Change directory to the specified working directory
+cd "$working_directory" || { echo "Failed to change directory."; exit 1; }
+
 # Function to fetch current IP address
 get_current_ip() {
     curl -s https://ipinfo.io/ip
