@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Set the working directory explicitly
-working_directory="/home/pi/whats_my_ip"
+# Get the directory where the script resides
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Change directory to the specified working directory
-cd "$working_directory" || { echo "Failed to change directory."; exit 1; }
+# Change directory to the script's directory
+cd "$script_dir" || { echo "Failed to change directory to script's location."; exit 1; }
+
+echo $(pwd)
 
 # Function to fetch current IP address
 get_current_ip() {
