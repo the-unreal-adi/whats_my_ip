@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Delay execution for 2 minutes
+sleep 120
+
 # Get the directory where the script resides
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -30,6 +33,9 @@ git_commit() {
 git_push() {
     git push --quiet
 }
+
+#Perform git restore to resolve divergent branch
+git restore . --quiet
 
 # Perform a git pull to update the local repository
 git_pull
