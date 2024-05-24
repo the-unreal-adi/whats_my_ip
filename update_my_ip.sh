@@ -6,8 +6,6 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Change directory to the script's directory
 cd "$script_dir" || { echo "Failed to change directory to script's location."; exit 1; }
 
-echo $(pwd)
-
 # Function to fetch current IP address
 get_current_ip() {
     curl -s https://ipinfo.io/ip
